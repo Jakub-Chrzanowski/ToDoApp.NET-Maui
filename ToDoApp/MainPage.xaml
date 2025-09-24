@@ -7,14 +7,13 @@
 
         <Label Text="To Do List" Style="{StaticResource TitleStyle}" />
 
- 
+
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="To Do" Style="{StaticResource TabHeaderStyle}" TextDecorations="Underline"/>
             <Label Text="Done" Style="{StaticResource TabHeaderStyle}" />
             <Label Text="Settings" Style="{StaticResource TabHeaderStyle}" />
         </HorizontalStackLayout>
-
-    
+        
         <Border BackgroundColor="#aaaaaa"
                 StrokeThickness="0"
                 Stroke="#aaaaaa"
