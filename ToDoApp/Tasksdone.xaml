@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ToDoApp.MainPage"
+             x:Class="ToDoApp.Tasksdone"
              BackgroundColor="#D9D9D9">
     <VerticalStackLayout Padding="20" Spacing="15">
 
@@ -10,23 +10,23 @@
 
 
         <HorizontalStackLayout HorizontalOptions="Center">
-            <Label x:Name="ToDo_Label" Text="To Do" Style="{StaticResource TabHeaderStyle}" TextDecorations="Underline"/>
-            <Label x:Name="Label_Done" Text="Done" Style="{StaticResource TabHeaderStyle}" >
+            <Label x:Name="ToDo_Label" Text="To Do" Style="{StaticResource TabHeaderStyle}">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
                 </Label.GestureRecognizers>
             </Label>
+            <Label x:Name="Label_Done" Text="Done" Style="{StaticResource TabHeaderStyle}" TextDecorations="Underline"/>
             <Label x:Name="Label_Summary" Text="Summary" Style="{StaticResource TabHeaderStyle}" />
         </HorizontalStackLayout>
-        
+
         <Border BackgroundColor="#aaaaaa"
-                StrokeThickness="0"
-                Stroke="#aaaaaa"
-                Margin="0"
-                Padding="15"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                StrokeShape="Rectangle">
+            StrokeThickness="0"
+            Stroke="#aaaaaa"
+            Margin="0"
+            Padding="15"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            StrokeShape="Rectangle">
 
             <VerticalStackLayout Spacing="10">
 
@@ -63,11 +63,8 @@
         </Border>
 
         <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
-            <Button Text="New task" Style="{StaticResource NewTaskButtonStyle}" />
-            <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" />
+            <Button Text="Delete" Style="{StaticResource DeleteButtonStyle}" />
         </HorizontalStackLayout>
 
     </VerticalStackLayout>
-
-
 </ContentPage>
