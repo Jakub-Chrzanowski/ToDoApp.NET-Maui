@@ -11,4 +11,9 @@ public partial class Tasksdone : ContentPage
     {
         await Navigation.PushAsync(new MainPage());
     }
+
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new Summary());
+    }
 }

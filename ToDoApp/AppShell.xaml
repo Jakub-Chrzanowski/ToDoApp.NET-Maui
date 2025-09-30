@@ -4,13 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ToDoApp"
-    Title="ToDoApp">
-
+    Title="ToDoApp"
+    FlyoutBehavior="Disabled">
     <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
     <ShellContent
-    ContentTemplate="{DataTemplate local:Tasksdone}"
-    Route="Tasksdone" />
+ContentTemplate="{DataTemplate local:Tasksdone}"
+Route="Tasksdone" />
+    <ShellContent
+ContentTemplate="{DataTemplate local:Summary}"
+Route="Summary" />
 
 </Shell>
