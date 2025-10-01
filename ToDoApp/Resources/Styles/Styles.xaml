@@ -49,5 +49,6 @@
         <Setter Property="Padding" Value="20,10"/>
         <Setter Property="FontSize" Value="24"/>
     </Style>
+    
 
 </ResourceDictionary>

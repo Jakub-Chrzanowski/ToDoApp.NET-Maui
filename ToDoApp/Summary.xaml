@@ -44,23 +44,11 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="0" Text="Task 1" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="0" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
+                    <Button Grid.Row="0" Grid.Column="0" Text="Tasks in progress" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
+                    <Button Grid.Row="0" Grid.Column="1" Text="Number" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
 
-                    <Button Grid.Row="1" Grid.Column="0" Text="Task 2" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="1" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="2" Grid.Column="0" Text="Task 3" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="2" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="3" Grid.Column="0" Text="Task 4" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="3" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="4" Grid.Column="0" Text="Task 5" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="4" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="5" Grid.Column="0" Text="Task 6" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="5" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
+                    <Button Grid.Row="1" Grid.Column="0" Text="Tasks done" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
+                    <Button Grid.Row="1" Grid.Column="1" Text="Number" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
                 </Grid>
             </VerticalStackLayout>
         </Border>
