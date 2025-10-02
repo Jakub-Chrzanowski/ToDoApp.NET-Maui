@@ -30,44 +30,37 @@
                 Padding="15"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
-                StrokeShape="Rectangle">
+   
+                >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12" />
+            </Border.StrokeShape>
 
-            <VerticalStackLayout Spacing="10">
 
-                <Grid ColumnDefinitions="*, Auto" RowSpacing="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding Pending}"
+                    SelectionMode="None"
+                    VerticalOptions="FillAndExpand"
+                    IsGrouped="False">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Padding="0" Spacing="10" VerticalOptions="Center">
+                            <Label Text="{Binding Text}" VerticalOptions="Center" Style="{StaticResource TaskButtonStyle}" />
+                            <CheckBox IsChecked="False" VerticalOptions="Center"  />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                    <Button Grid.Row="0" Grid.Column="0" Text="Task 1" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="0" Grid.Column="1" />
-
-                    <Button Grid.Row="1" Grid.Column="0" Text="Task 2" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="1" Grid.Column="1" />
-
-                    <Button Grid.Row="2" Grid.Column="0" Text="Task 3" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="2" Grid.Column="1" />
-
-                    <Button Grid.Row="3" Grid.Column="0" Text="Task 4" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="3" Grid.Column="1" />
-
-                    <Button Grid.Row="4" Grid.Column="0" Text="Task 5" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="4" Grid.Column="1" />
-
-                    <Button Grid.Row="5" Grid.Column="0" Text="Task 6" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <CheckBox Grid.Row="5" Grid.Column="1" />
-
-                </Grid>
-            </VerticalStackLayout>
         </Border>
 
         <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
-            <Button Text="New task" Style="{StaticResource NewTaskButtonStyle}" />
+            <Entry x:Name="NewTaskEntry"
+       Placeholder="Nowe zadanie"
+       HorizontalOptions="FillAndExpand"
+       ReturnType="Done"
+    
+       Style="{StaticResource NewTaskButtonStyle}" />
+
             <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" />
         </HorizontalStackLayout>
 
