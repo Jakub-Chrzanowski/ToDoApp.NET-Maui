@@ -30,40 +30,23 @@
             Margin="0"
             Padding="15"
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            StrokeShape="Rectangle">
+            VerticalOptions="FillAndExpand">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12" />
+            </Border.StrokeShape>
 
-            <VerticalStackLayout Spacing="10">
-
-                <Grid ColumnDefinitions="*, Auto" RowSpacing="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <Button Grid.Row="0" Grid.Column="0" Text="Task 1" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="0" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="1" Grid.Column="0" Text="Task 2" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="1" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="2" Grid.Column="0" Text="Task 3" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="2" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="3" Grid.Column="0" Text="Task 4" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="3" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="4" Grid.Column="0" Text="Task 5" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="4" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                    <Button Grid.Row="5" Grid.Column="0" Text="Task 6" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-                    <Button Grid.Row="5" Grid.Column="1" Text="Date" Style="{StaticResource TaskButtonStyle}" IsEnabled="False" />
-
-                </Grid>
-            </VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Done}"
+                    SelectionMode="None"
+                    VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, Auto" RowSpacing="6" Padding="0">
+                            <Label Grid.Column="0" Text="{Binding Text}" Style="{StaticResource TaskButtonStyle}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding CompletedAt, StringFormat='{0:yyyy-MM-dd HH:mm}'}" Style="{StaticResource TaskButtonStyle}" VerticalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Border>
 
         <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">

@@ -45,7 +45,7 @@
                     <DataTemplate>
                         <HorizontalStackLayout Padding="0" Spacing="10" VerticalOptions="Center">
                             <Label Text="{Binding Text}" VerticalOptions="Center" Style="{StaticResource TaskButtonStyle}" />
-                            <CheckBox IsChecked="False" VerticalOptions="Center"  />
+                            <CheckBox IsChecked="False" VerticalOptions="Center" CheckedChanged="CheckBox_CheckedChanged" />
                         </HorizontalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -58,10 +58,10 @@
        Placeholder="Nowe zadanie"
        HorizontalOptions="FillAndExpand"
        ReturnType="Done"
-    
+       Completed="NewTaskEntry_Completed"
        Style="{StaticResource NewTaskButtonStyle}" />
 
-            <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" />
+            <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" Clicked="AddNewButton_Clicked"/>
         </HorizontalStackLayout>
 
     </VerticalStackLayout>

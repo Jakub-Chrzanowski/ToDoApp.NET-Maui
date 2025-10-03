@@ -5,7 +5,8 @@ public partial class Tasksdone : ContentPage
 	public Tasksdone()
 	{
 		InitializeComponent();
-	}
+        BindingContext = Services.TaskStore.Instance;
+    }
 
     private async void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
     {
