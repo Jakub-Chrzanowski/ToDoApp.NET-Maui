@@ -138,4 +138,4 @@ GitHub: [@Jakub-Chrzanowski](https://github.com/Jakub-Chrzanowski)
 ---
 
 > [!NOTE]  
-> Built with ❤️ using **.NET MAUI** and the **MVVM** design pattern.
+> Built using **.NET MAUI** and the **MVVM** design pattern.
