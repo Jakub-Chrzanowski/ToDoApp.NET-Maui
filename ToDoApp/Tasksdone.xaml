@@ -2,10 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoApp.Tasksdone"
-             BackgroundColor="#D9D9D9"
-             >
+             BackgroundColor="#D9D9D9">
     <VerticalStackLayout Padding="20" Spacing="15">
-
 
         <Label Text="To Do List" Style="{StaticResource TitleStyle}" />
 
@@ -25,19 +23,20 @@
         </HorizontalStackLayout>
 
         <Border BackgroundColor="#aaaaaa"
-            StrokeThickness="0"
-            Stroke="#aaaaaa"
-            Margin="0"
-            Padding="15"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+                StrokeThickness="0"
+                Stroke="#aaaaaa"
+                Margin="0"
+                Padding="15"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
 
-            <CollectionView ItemsSource="{Binding Done}"
-                    SelectionMode="None"
-                    VerticalOptions="FillAndExpand">
+            <CollectionView x:Name="DoneCollectionView"
+                            ItemsSource="{Binding Done}"
+                            SelectionMode="Multiple"
+                            VerticalOptions="FillAndExpand">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="*, Auto" RowSpacing="6" Padding="0">
@@ -50,7 +49,7 @@
         </Border>
 
         <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
-            <Button Text="Delete" Style="{StaticResource DeleteButtonStyle}" />
+            <Button Text="Delete selected" Style="{StaticResource DeleteButtonStyle}" Clicked="DeleteSelected_Clicked" />
         </HorizontalStackLayout>
 
     </VerticalStackLayout>

@@ -1,13 +1,15 @@
-﻿
+﻿using System;
+using ToDoApp.Services;
+using Microsoft.Maui.Controls;
+
 namespace ToDoApp
 {
     public partial class MainPage : ContentPage
     {
-
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = Services.TaskStore.Instance;
+            BindingContext = TaskStore.Instance;
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
@@ -19,6 +21,7 @@ namespace ToDoApp
         {
             await Navigation.PushAsync(new Summary());
         }
+
         private void NewTaskEntry_Completed(object sender, EventArgs e)
         {
             AddTaskFromEntry();
@@ -35,20 +38,19 @@ namespace ToDoApp
             if (string.IsNullOrWhiteSpace(text))
                 return;
 
-            Services.TaskStore.Instance.AddPending(new Models.Todoitem { Text = text });
+            TaskStore.Instance.AddPending(new Todoitem { Text = text });
             NewTaskEntry.Text = string.Empty;
         }
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (!e.Value) 
+            if (!e.Value)
                 return;
 
-            if (sender is CheckBox cb && cb.BindingContext is Models.Todoitem item)
+            if (sender is CheckBox cb && cb.BindingContext is Todoitem item)
             {
-
                 item.CompletedAt = DateTime.Now;
-                Services.TaskStore.Instance.MarkDone(item);
+                TaskStore.Instance.MarkDone(item);
             }
         }
     }
