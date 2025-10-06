@@ -30,7 +30,6 @@
                 Padding="15"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
-   
                 >
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12" />
