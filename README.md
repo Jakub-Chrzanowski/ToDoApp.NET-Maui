@@ -95,7 +95,6 @@ Click **▶ Run** or press **F5** in Visual Studio.
 ToDoApp.NET-Maui/
 ├── ToDoApp/
 │   ├── Models/          # Data models (e.g., TaskItem)
-│   ├── ViewModels/      # MVVM logic and data binding
 │   ├── Views/           # UI Pages (XAML)
 │   ├── Platforms/       # Platform-specific code (Android, iOS, etc.)
 │   ├── App.xaml(.cs)    # Global styles and configuration
