@@ -58,6 +58,9 @@ To build and run this project, ensure you have the following:
 > Make sure the **MAUI workloads** are properly installed in Visual Studio.  
 > You can verify this by opening the **Visual Studio Installer → Modify → .NET Multi-platform App UI development**.
 
+> [!WARNING]
+> According to Microsoft, Linux **MAUI Android workloads** for unknown reasons are not included in .NET 9.0. Even though that workloads are normally working on 8.0 version it is not quaranteed and tested on this project.
+
 ---
 
 ## ⚙️ Getting Started
