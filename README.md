@@ -52,14 +52,14 @@ To build and run this project, ensure you have the following:
 | [.NET SDK](https://dotnet.microsoft.com/en-us/download) | **9.0** | Required for building the MAUI project |
 | **Visual Studio 2022/2023** | Latest | With **.NET MAUI workload** installed |
 | **Android SDK / Xcode** | Depends on platform | For mobile builds |
-| **Windows 10+ / macOS Monterey+** | — | For desktop builds |
+| **Windows 10+ / macOS Monterey+ / Linux*** | — | For desktop builds |
 
 > [!IMPORTANT]  
 > Make sure the **MAUI workloads** are properly installed in Visual Studio.  
 > You can verify this by opening the **Visual Studio Installer → Modify → .NET Multi-platform App UI development**.
 
 > [!WARNING]
-> According to Microsoft, Linux **MAUI Android workloads** for unknown reasons are not included in .NET 9.0. Even though that workloads are normally working on 8.0 version it is not quaranteed and tested on this project.
+> *According to Microsoft, Linux **MAUI Android workloads** for unknown reasons are not included in .NET 9.0. Even though that workloads are normally working on 8.0 version it is not quaranteed and tested on this project.
 
 ---
 
