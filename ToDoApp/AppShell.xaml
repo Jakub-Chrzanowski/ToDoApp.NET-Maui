@@ -8,6 +8,10 @@
     FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
     <ShellContent
+ContentTemplate="{DataTemplate local:Login}"
+Route="Login" />
+
+    <ShellContent
     ContentTemplate="{DataTemplate local:MainPage}"
     Route="MainPage" />
     <ShellContent
@@ -16,6 +20,6 @@ Route="Tasksdone" />
     <ShellContent
 ContentTemplate="{DataTemplate local:Summary}"
 Route="Summary" />
-
+    
 </Shell>
 
