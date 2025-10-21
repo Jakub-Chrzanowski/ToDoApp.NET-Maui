@@ -4,7 +4,7 @@
              x:Class="ToDoApp.Login"
              Title="Login"
              BackgroundColor="#D9D9D9">
-    <Grid Margin="15">
+    <Grid Margin="50,290">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
