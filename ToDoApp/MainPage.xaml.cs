@@ -1,11 +1,13 @@
 ﻿using System;
 using ToDoApp.Services;
 using Microsoft.Maui.Controls;
+using System.Text.Json
 
 namespace ToDoApp
 {
     public partial class MainPage : ContentPage
     {
+        private string filePath = Path.Combine(FileSystem.AppDataDirectory, "tasks.json");
         public MainPage()
         {
             InitializeComponent();
@@ -52,6 +54,15 @@ namespace ToDoApp
                 item.CompletedAt = DateTime.Now;
                 TaskStore.Instance.MarkDone(item);
             }
+        }
+        private void SaveButton_Clicked(object sender, CheckedChangedEventArgs e)
+        {
+            string json = JsonSerializer.Serialize(Todoitem);
+
+        }
+        private void RestoreButton_Clicked(object sender, CheckedChangedEventArgs e)
+        {
+
         }
     }
 }

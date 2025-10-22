@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoApp.MainPage"
              BackgroundColor="#D9D9D9">
+
     <VerticalStackLayout Padding="20" Spacing="15">
 
 
@@ -22,24 +23,23 @@
                 </Label.GestureRecognizers>
             </Label>
         </HorizontalStackLayout>
-        
+
+  
         <Border BackgroundColor="#aaaaaa"
                 StrokeThickness="0"
                 Stroke="#aaaaaa"
                 Margin="0"
                 Padding="15"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                >
+                VerticalOptions="FillAndExpand">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
 
-
             <CollectionView ItemsSource="{Binding Pending}"
-                    SelectionMode="None"
-                    VerticalOptions="FillAndExpand"
-                    IsGrouped="False">
+                            SelectionMode="None"
+                            VerticalOptions="FillAndExpand"
+                            IsGrouped="False">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <HorizontalStackLayout Padding="0" Spacing="10" VerticalOptions="Center">
@@ -52,18 +52,23 @@
 
         </Border>
 
+
         <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
             <Entry x:Name="NewTaskEntry"
-       Placeholder="Nowe zadanie"
-       HorizontalOptions="FillAndExpand"
-       ReturnType="Done"
-       Completed="NewTaskEntry_Completed"
-       Style="{StaticResource NewTaskButtonStyle}" />
+                   Placeholder="Nowe zadanie"
+                   HorizontalOptions="FillAndExpand"
+                   ReturnType="Done"
+                   Completed="NewTaskEntry_Completed"
+                   Style="{StaticResource NewTaskButtonStyle}" />
 
             <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" Clicked="AddNewButton_Clicked"/>
         </HorizontalStackLayout>
 
-    </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
+            <Button Text="Save Tasks" Style="{StaticResource AddNewButtonStyle}" Clicked="SaveButton_Clicked"/>
+            <Button Text="Restore Tasks" Style="{StaticResource AddNewButtonStyle}" Clicked="RestoreButton_Clicked"/>
+        </HorizontalStackLayout>
 
+    </VerticalStackLayout>
 
 </ContentPage>
