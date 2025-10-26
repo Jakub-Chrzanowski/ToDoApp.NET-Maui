@@ -6,28 +6,30 @@
 
     <VerticalStackLayout Padding="20" Spacing="15">
 
-
         <Label Text="To Do List" Style="{StaticResource TitleStyle}" />
 
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+            <Label x:Name="ToDo_Label" Text="To Do" 
+                   Style="{StaticResource TabHeaderStyle}" 
+                   TextDecorations="Underline"/>
 
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Label x:Name="ToDo_Label" Text="To Do" Style="{StaticResource TabHeaderStyle}" TextDecorations="Underline"/>
-            <Label x:Name="Label_Done" Text="Done" Style="{StaticResource TabHeaderStyle}" >
+            <Label x:Name="Label_Done" Text="Done" 
+                   Style="{StaticResource TabHeaderStyle}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label x:Name="Label_Summary" Text="Summary" Style="{StaticResource TabHeaderStyle}">
+
+            <Label x:Name="Label_Summary" Text="Summary" 
+                   Style="{StaticResource TabHeaderStyle}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
                 </Label.GestureRecognizers>
             </Label>
         </HorizontalStackLayout>
 
-  
         <Border BackgroundColor="#aaaaaa"
                 StrokeThickness="0"
-                Stroke="#aaaaaa"
                 Margin="0"
                 Padding="15"
                 HorizontalOptions="FillAndExpand"
@@ -43,17 +45,17 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <HorizontalStackLayout Padding="0" Spacing="10" VerticalOptions="Center">
-                            <Label Text="{Binding Text}" VerticalOptions="Center" Style="{StaticResource TaskButtonStyle}" />
-                            <CheckBox IsChecked="False" VerticalOptions="Center" CheckedChanged="CheckBox_CheckedChanged" />
+                            <Label Text="{Binding Text}" VerticalOptions="Center" 
+                                   Style="{StaticResource TaskButtonStyle}" />
+                            <CheckBox IsChecked="False" VerticalOptions="Center" 
+                                      CheckedChanged="CheckBox_CheckedChanged" />
                         </HorizontalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
         </Border>
 
-
-        <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand">
             <Entry x:Name="NewTaskEntry"
                    Placeholder="Nowe zadanie"
                    HorizontalOptions="FillAndExpand"
@@ -61,14 +63,22 @@
                    Completed="NewTaskEntry_Completed"
                    Style="{StaticResource NewTaskButtonStyle}" />
 
-            <Button Text="Add new" Style="{StaticResource AddNewButtonStyle}" Clicked="AddNewButton_Clicked"/>
+            <Button Text="Add new"
+                    Style="{StaticResource AddNewButtonStyle}"
+                    Clicked="AddNewButton_Clicked"/>
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
-            <Button Text="Save Tasks" Style="{StaticResource AddNewButtonStyle}" Clicked="SaveButton_Clicked"/>
-            <Button Text="Restore Tasks" Style="{StaticResource AddNewButtonStyle}" Clicked="RestoreButton_Clicked"/>
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Padding="0,10,0,0">
+            <Button Text="Save Tasks"
+                    Style="{StaticResource AddNewButtonStyle}"
+                    Clicked="SaveButton_Clicked"
+                    WidthRequest="150"/>
+
+            <Button Text="Restore Tasks"
+                    Style="{StaticResource AddNewButtonStyle}"
+                    Clicked="RestoreButton_Clicked"
+                    WidthRequest="150"/>
         </HorizontalStackLayout>
 
     </VerticalStackLayout>
-
 </ContentPage>

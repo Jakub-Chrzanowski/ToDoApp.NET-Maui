@@ -1,13 +1,15 @@
 ﻿using System;
+using System.IO;
+using System.Text.Json;
 using ToDoApp.Services;
 using Microsoft.Maui.Controls;
-using System.Text.Json
 
 namespace ToDoApp
 {
     public partial class MainPage : ContentPage
     {
-        private string filePath = Path.Combine(FileSystem.AppDataDirectory, "tasks.json");
+        private readonly string filePath = Path.Combine(FileSystem.AppDataDirectory, "tasks.json");
+
         public MainPage()
         {
             InitializeComponent();
@@ -55,14 +57,59 @@ namespace ToDoApp
                 TaskStore.Instance.MarkDone(item);
             }
         }
-        private void SaveButton_Clicked(object sender, CheckedChangedEventArgs e)
-        {
-            string json = JsonSerializer.Serialize(Todoitem);
 
-        }
-        private void RestoreButton_Clicked(object sender, CheckedChangedEventArgs e)
+        private async void SaveButton_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                var data = new
+                {
+                    Pending = TaskStore.Instance.Pending,
+                    Done = TaskStore.Instance.Done
+                };
 
+                string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+                await File.WriteAllTextAsync(filePath, json);
+
+                await DisplayAlert("Success", "Tasks saved successfully!", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Saving failed: {ex.Message}", "OK");
+            }
         }
+
+        private async void RestoreButton_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    await DisplayAlert("Info", "No saved tasks found.", "OK");
+                    return;
+                }
+
+                string json = await File.ReadAllTextAsync(filePath);
+                var data = JsonSerializer.Deserialize<TaskData>(json);
+
+                if (data != null)
+                {
+                    TaskStore.Instance.Restore(data.Pending, data.Done);
+                }
+
+                await DisplayAlert("Success", "Tasks restored successfully!", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Restoring failed: {ex.Message}", "OK");
+            }
+        }
+    }
+
+
+    public class TaskData
+    {
+        public List<Todoitem> Pending { get; set; } = new();
+        public List<Todoitem> Done { get; set; } = new();
     }
 }

@@ -64,5 +64,13 @@ namespace ToDoApp.Services
 
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        public void Restore(IEnumerable<Todoitem> pending, IEnumerable<Todoitem> done)
+        {
+            Pending.Clear();
+            Done.Clear();
+            foreach (var item in pending) Pending.Add(item);
+            foreach (var item in done) Done.Add(item);
+        }
+
     }
 }
