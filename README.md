@@ -60,6 +60,7 @@ To build and run this project, ensure you have the following:
 
 > [!WARNING]
 > *According to Microsoft, Linux **MAUI Android workloads** for unknown reasons are not included in .NET 9.0. Even though that workloads are normally working on 8.0 version it is not quaranteed and tested on this project.
+> NEW! - https://avaloniaui.net/blog/net-maui-is-coming-to-linux-and-the-browser-powered-by-avalonia
 
 ---
 
